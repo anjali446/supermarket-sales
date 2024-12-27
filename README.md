@@ -1,4 +1,4 @@
-# supermarket-sales
+# Supermarket-sales
 Supermarket Sales Data Analysis SQL Project
 
 ## Project Overview
@@ -10,7 +10,6 @@ Supermarket Sales Data Analysis SQL Project
 This project showcases my expertise in SQL for data analysis, where I explored, cleaned, and analyzed supermarket sales data to derive meaningful insights. The project covers Sales Analysis, Customer Behavior Trends, Anomaly Detection, Predictive Analysis, and Cohort Analysis to support business decision-making.
 
 ## Objectives
-
 1. **Sales Performance**: Identify top-performing branches and product lines.
 2. **Customer Behavior**: Analyze patterns by customer type, gender, and payment methods.
 3. **Time-Based Trends**: Examine sales trends across different months, days, and hours.
@@ -18,9 +17,8 @@ This project showcases my expertise in SQL for data analysis, where I explored, 
 5. **Predictive Analysis**: Forecast future sales based on historical trends.
 6. **Cohort Analysis**: Understand customer retention patterns over time.
 
-## My Approach
 ## Project Structure
-### 1. Database Setup
+### Database Setup
 - **Database Creation**: The database supermarket_sales_db stores all relevant data.
 - **Table Structure**: A table named supermarket_sales contains details such as invoice ID, branch, city, customer type, gender, Unit price ,Quantity ,Tax 5%, Total, Date, Time,Payment ,cogs ,gross margin percentage ,gross income , Rating
 
@@ -47,7 +45,7 @@ CREATE TABLE supermarket_sales (
     Rating DECIMAL(3, 1)
 );
 ```
-### 2. Data Cleaning
+### Data Cleaning
 **Checked for Missing Values**:
 ```sql
 SELECT * 
@@ -72,8 +70,8 @@ WHERE Invoice_ID IS NULL
 ```
 
 
-### 3. Data Analysis
-###  1. Sales Analysis
+### Data Analysis
+ ### 1. Sales Analysis
 I started by analyzing overall sales performance:
 - Calculated total sales and average sales per transaction.
 ```sql
@@ -196,7 +194,7 @@ FROM supermarket_sales s
 JOIN FirstPurchase FP ON s.Customer_type = FP.Customer_type
 GROUP BY FP.Customer_type, Cohort_Month, Purchase_Month;
 ```
-### 4. Insights
+### Insights
 
 - **Top Branch**: Branch B had the highest total sales across all branches.
 - **Customer Behavior**: Members contributed significantly more to sales than non-members.
@@ -205,7 +203,7 @@ GROUP BY FP.Customer_type, Cohort_Month, Purchase_Month;
 - **Sales Forecasting**: Predicted consistent sales growth based on historical trends.
 - **Customer Retention**: Cohort analysis reveals consistent retention among members compared to non-members.
 
-### 5. Conclusion
+### Conclusion
 The analysis provides actionable insights into branch performance, customer behavior, and time-based sales trends. It highlights peak activity periods and identifies potential outliers, enabling targeted strategies for promotions, inventory management, and customer retention.
 
 
