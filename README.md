@@ -131,8 +131,10 @@ ORDER BY Total_Sales DESC;
 - **Monthly Sales Trends**:
 Analyzed monthly sales trends to identify seasonal performance and potential opportunities for promotional activities.
 ```sql
-SELECT DATE_FORMAT(Date, '%Y-%m') AS Month, SUM(Total) AS Total_Sales
-FROM supermarket_sales
+SELECT 
+    DATE_FORMAT(STR_TO_DATE(Date, '%m/%d/%Y'), '%Y-%m') AS Month,
+    SUM(Total) AS Monthly_Sales
+FROM google.supermarket_sales
 GROUP BY Month
 ORDER BY Month;
 ```
@@ -181,18 +183,19 @@ I analyzed customer retention trends by grouping customers based on their first 
 WITH FirstPurchase AS (
     SELECT 
         Customer_type,
-        MIN(Date) AS First_Purchase_Date
-    FROM supermarket_sales
+        MIN(STR_TO_DATE(Date, '%m/%d/%Y')) AS First_Purchase_Date
+    FROM google.supermarket_sales
     GROUP BY Customer_type
 )
 SELECT 
- FP.Customer_type,
+    FP.Customer_type,
     DATE_FORMAT(FP.First_Purchase_Date, '%Y-%m') AS Cohort_Month,
-    DATE_FORMAT(s.Date, '%Y-%m') AS Purchase_Month,
+    DATE_FORMAT(STR_TO_DATE(s.Date, '%m/%d/%Y'), '%Y-%m') AS Purchase_Month,
     COUNT(s.Invoice_ID) AS Purchase_Count
-FROM supermarket_sales s
+FROM google.supermarket_sales s
 JOIN FirstPurchase FP ON s.Customer_type = FP.Customer_type
-GROUP BY FP.Customer_type, Cohort_Month, Purchase_Month;
+GROUP BY FP.Customer_type, Cohort_Month, Purchase_Month
+ORDER BY FP.Customer_type, Cohort_Month, Purchase_Month;
 ```
 ### Insights
 
