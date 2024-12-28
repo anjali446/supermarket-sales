@@ -196,7 +196,7 @@ GROUP BY FP.Customer_type, Cohort_Month, Purchase_Month;
 ```
 ### Insights
 
-- **Top Branch**: Branch B had the highest total sales across all branches.
+- **Top Branch**: Branch C had the highest total sales across all branches.
 - **Customer Behavior**: Members contributed significantly more to sales than non-members.
 - **Peak Hours**: Most sales occurred between 12 PM and 3 PM, indicating lunchtime shopping trends.
 - **Anomalies**: Detected extreme transactions likely due to promotions or bulk purchases.
