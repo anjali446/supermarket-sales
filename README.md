@@ -198,7 +198,7 @@ GROUP BY FP.Customer_type, Cohort_Month, Purchase_Month;
 
 - **Top Branch**: Branch C had the highest total sales across all branches.
 - **Customer Behavior**: Members contributed significantly more to sales than non-members.
-- **Peak Hours**: Most sales occurred between 12 PM and 3 PM, indicating lunchtime shopping trends.
+- **Peak Hours**: Peak sales occur at 7 PM ($39,699.51), with consistent midday sales observed between 10 AM and 3 PM, indicating strong performance during these hours.
 - **Anomalies**: Detected extreme transactions likely due to promotions or bulk purchases.
 - **Sales Forecasting**: Predicted consistent sales growth based on historical trends.
 - **Customer Retention**: Cohort analysis reveals consistent retention among members compared to non-members.
